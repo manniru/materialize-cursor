@@ -1,0 +1,29 @@
+export interface Account {
+  address: string
+  balance: number
+  bvn: string
+  city: string
+  country: string
+  created_at: Date
+  dob: string
+  email: string
+  firebase_uid: string
+  firstname: string
+  fund: number
+  gender: string
+  idtype: string
+  lga: string
+  middlename: string
+  nin: string
+  pass: string
+  phone: string
+  role: string
+  spend: number
+  state: string
+  status: number
+  surname: string
+  title: string
+  town: string
+  uid: string
+  user_id: string
+}
