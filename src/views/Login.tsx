@@ -25,7 +25,7 @@ import { object, minLength, string, email, pipe, nonEmpty } from 'valibot'
 import type { SubmitHandler } from 'react-hook-form'
 import type { InferInput } from 'valibot'
 import classnames from 'classnames'
-import { signInWithEmailAndPassword } from 'firebase/auth'
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 
 // Type Imports
 import type { Mode } from '@core/types'
@@ -239,7 +239,20 @@ const Login = ({ mode }: { mode: Mode }) => {
             className='self-center text-textPrimary'
             startIcon={<img src='/images/logos/google.png' alt='Google' width={22} />}
             sx={{ '& .MuiButton-startIcon': { marginInlineEnd: 3 } }}
-            onClick={() => signIn('google')}
+            onClick={async () => {
+              try {
+                const provider = new GoogleAuthProvider()
+                const result = await signInWithPopup(auth, provider)
+
+                if (result.user) {
+                  const redirectURL = searchParams.get('redirectTo') ?? '/'
+
+                  router.replace(redirectURL)
+                }
+              } catch (error: any) {
+                setErrorState({ message: [error.message] })
+              }
+            }}
           >
             Sign in with Google
           </Button>

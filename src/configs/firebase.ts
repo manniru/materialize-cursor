@@ -2,14 +2,15 @@ import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyAFG4BHkwTUdRcnWq5tnIPr3Bf_jFnhsAg',
-  authDomain: 'sufuricloud.firebaseapp.com',
-  projectId: 'sufuricloud',
-  storageBucket: 'sufuricloud.firebasestorage.app',
-  messagingSenderId: '35305109481',
-  appId: '1:35305109481:web:340d87635d0a711f413d78',
-  measurementId: 'G-9LDRJJTV7K'
+  apiKey: 'AIzaSyBgwCXrzEdb5wuxjxX8lpXknTOfod_x2YI',
+  authDomain: 'esyscloud.firebaseapp.com',
+  projectId: 'esyscloud',
+  storageBucket: 'esyscloud.firebasestorage.app',
+  messagingSenderId: '1016569077190',
+  appId: '1:1016569077190:web:43e6b49ba3f64f14a9a6c7',
+  measurementId: 'G-32TQQZ4NL2'
 }
 
 // Initialize Firebase
